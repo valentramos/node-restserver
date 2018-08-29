@@ -32,7 +32,7 @@ app.get('/usuario', verificaToken, (req, res) => {
                 });
             });
 
-        })
+        });
 
 });
 
@@ -92,7 +92,7 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
     let id = req.params.id;
     let cambiaEstado = {
         estado: false
-    }
+    };
 
     // Usuario.findByIdAndRemove(id, (err, usuarioBorrado) => {
 
@@ -110,7 +110,7 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
                     message: 'Usuario no encontrado'
                 }
             });
-        };
+        }
         res.json({
             ok: true,
             usuario: usuarioBorrado
